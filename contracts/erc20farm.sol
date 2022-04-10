@@ -23,8 +23,7 @@ contract OwaneFarm is ChainlinkClient, Ownable
     {
         owaneToken = IERC20(_owaneTokenAddress);
     }
-
-    // Stake Owane Tokens
+    // Stake Owane Tokens (Deposit)
     function stakeTokens(uint256 _amount, address _token) public 
     {
         require(_amount > 0, "Amount cannot be 0");
@@ -69,7 +68,7 @@ contract OwaneFarm is ChainlinkClient, Ownable
     {
         allowedTokens.push(_token);
     }
-    // Call to DONs for valid pric feed
+    // Call to DONs for valid price feed
     function setPriceFeedContract(address _token, address priceFeed) public onlyOwner 
     {
         tokenPriceFeedMapping[_token] = priceFeed;
