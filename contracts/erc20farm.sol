@@ -48,7 +48,7 @@ contract OwaneFarm is ChainlinkClient, Ownable
         uniqueTokensStaked[msg.sender] = uniqueTokensStaked[msg.sender] -1;
     }
     // Permission to interact with ERC20 contract
-    function tokenIsAllowed(address _token) public returns (bool) 
+    function tokenIsAllowed(address _token) public view returns (bool) 
     {
         for 
         (
